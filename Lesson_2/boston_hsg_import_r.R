@@ -1,7 +1,0 @@
-setwd('C:/Users/vreed/Desktop/Ryan/AIEngineer/WGU/MSDA/D206 _Data_Cleaning/Lesson_2')
-install.packages('tidyverse')
-library('tidyverse')
-df <- read_csv(file.choose())
-head(df, 5)
-# install.packages("ggplot2")
-# library(ggplot2)
