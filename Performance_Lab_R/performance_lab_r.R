@@ -57,3 +57,12 @@ sapply(df,function(x) sum(is.na(x)))
 # Write code to calculate the standard deviation of every numeric column in the dataset Boston_housing_data.csv.
 df <- read.csv('/home/ucertify/Boston_housing_data.csv')
 sapply(df,function(x) sd(x, na.rm = TRUE))
+
+# Write code that displays all duplicated rows in the dataframe stored as df.
+df[duplicated(df),]
+
+# Write code to drop all the duplicates in the dataframe stored as df.
+df <- df[duplicated(df) == F,]
+df
+
+# 
