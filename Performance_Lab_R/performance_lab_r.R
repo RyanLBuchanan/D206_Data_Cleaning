@@ -17,3 +17,6 @@ str(df)
 
 # Displaying unique values: Write code to display unique values in the locationzone column in the dataframe stored as df.
 unique(df$'locationzone')
+
+# 
+df %>% count(locationszone) %>% arrange(desc(n))
