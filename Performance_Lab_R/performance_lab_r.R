@@ -30,3 +30,26 @@ df[duplicated(df),]
 
 # Write code that displays how many missing values are in each column in the dataframe stored as df.
 sapply(df, function(x) sum (is.na(x)))
+
+# Write code that displays the mean value of the medv column per district on March 27, 2016. To do this, limit the dataset to observations that were appraised on March 27, 2016, and create a datasheet that aggregates all the data by the locationdistrict column and displays the mean of medv rounded off to one decimal place.
+df <- read.csv("boston_housing_data_clean.csv")
+df2 <- df %>% filter(date_appraised == '2016-03-27')
+tbl <- df2 %>% group_by(locationdistrict) %>% summarise(mean=mean(medv, na.rm = TRUE), .groups = 'drop')
+tbl
+
+# Write code to import the dataset iris.csv using base R code and display the first 6 rows of data.
+df <- read.csv('iris.csv')
+
+# Apply the summary() function on the dataframe stored as df.
+summary(df)
+
+# Apply the str() function on the dataframe stored as df.
+# The str() function is an easy way to view the makeup of many R objects, including how to access stored information. For a dataframe, this will show each column's name and data type.
+str(df)
+
+# The str() function is an easy way to view the makeup of many R objects, including how to access stored information. For a dataframe, this will show each column's name and data type.
+df <- read.csv('boston_housing_data.csv')
+head(df, 5)
+
+# Write code to identify how many missing values are in each column in the dataframe stored as df.
+sapply(df,function(x) sum(is.na(x)))
