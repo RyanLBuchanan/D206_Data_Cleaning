@@ -53,3 +53,7 @@ head(df, 5)
 
 # Write code to identify how many missing values are in each column in the dataframe stored as df.
 sapply(df,function(x) sum(is.na(x)))
+
+# Write code to calculate the standard deviation of every numeric column in the dataset Boston_housing_data.csv.
+df <- read.csv('/home/ucertify/Boston_housing_data.csv')
+sapply(df,function(x) sd(x, na.rm = TRUE))
