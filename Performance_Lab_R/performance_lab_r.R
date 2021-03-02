@@ -18,5 +18,15 @@ str(df)
 # Displaying unique values: Write code to display unique values in the locationzone column in the dataframe stored as df.
 unique(df$'locationzone')
 
-# 
-df %>% count(locationszone) %>% arrange(desc(n))
+# Write code to display the unique values in the locationzone column and the number of times each value appears in the dataframe stored as df.
+df %>% count(locationzone) %>% arrange(desc(n))
+
+# The base R function to read in a CSV file is read.csv(). You will also see read_csv() used, but that function belongs to the Tidyverse library. Using head() with default arguments displays the first 6 rows of data. To display different row amounts, you can add an integer to the head() function. For example head(df,10) to display the first 10 rows.
+df <- read.csv("boston_housing_data_clean.csv")
+head(df)
+
+# Write code that displays any duplicate rows in the dataframe stored as df.
+df[duplicated(df),]
+
+# Write code that displays how many missing values are in each column in the dataframe stored as df.
+sapply(df, function(x) sum (is.na(x)))
