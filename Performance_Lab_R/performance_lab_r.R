@@ -65,4 +65,19 @@ df[duplicated(df),]
 df <- df[duplicated(df) == F,]
 df
 
-# 
+# Define an outlier as a value whose z-score value is greater than 3 or less than -3 and write code that displays rows with outliers in the medv column of the dataframe stored as df.
+medv_z <- scale(df$medv)
+df[(medv_z >3) | (medv_z < -3),]
+
+# Write code to define an outlier as a variable whose z-score value is greater than 3 or less than -3, then eliminate the rows that contain outliers in the medv column of the dataframe stored as df.
+df <- read.csv('boston_housing_data.csv')
+dim(df)
+medv_z <- scale(df$medv)
+df <- df[(medv_z <= 3) & (medv_z >= -3), ]
+
+# Dropping a column
+# Write code to drop the rad column from the dataframe stored as df as it contains a significant amount of missing data.
+df <- read.csv('boston_housing_data.csv')
+df <- df %>% select(!rad)
+colnames(df)
+
