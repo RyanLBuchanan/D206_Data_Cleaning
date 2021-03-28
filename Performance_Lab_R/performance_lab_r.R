@@ -1,3 +1,11 @@
+# Load a packages (like magrittr or dplyr) that defines the function
+install.packages("magrittr") # package installations are only needed the first time you use it
+install.packages("dplyr")    # alternative installation of the %>%
+library(magrittr) # needs to be run every time you start R and want to use %>%
+library(dplyr)    # alternatively, this also loads %>%
+#The pipe operator %>% was introduced to "decrease development time and to improve readability and maintainability of code."
+
+
 # Importing the dataset: Write code to import the dataset Boston_housing_data.csv using base R code and display the result.
 df <- read.csv("boston_housing_data.csv")
 df
@@ -92,5 +100,11 @@ df %>% select(locationzone)
 # Question 24 :
 #   There are missing values in the locationdistrict column. Redefine all missing values (either N/A or blank)  in locationdistrict to be the first character in the locationzone column.
 df <- read.csv('Boston_housing_data.csv')
-df <- df %>% mutate(locationdistrict = ifelse(locationdistrict=="") | (is.na(locationdistrict)),substr(locationzone,1,1), locationdistrict)
+df <- df %>% mutate(locationdistrict = ifelse((locationdistrict=="") | (is.na(locationdistrict)),substr(locationzone,1,1), locationdistrict))
 df %>% select(locationzone, locationdistrict)
+
+# Creating a separate dataset
+# Question 25 :
+#   Write code to create a separate dataset called df2 that stores information about locationzone, locationdistrict, date_appraised, and medv for the sectors H, J, and N from the dataframe stored as df.
+df <- read.csv('Boston_housing_data.csv')
+df2 <- df %>%
