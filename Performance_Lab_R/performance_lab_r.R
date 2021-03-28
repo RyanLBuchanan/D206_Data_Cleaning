@@ -87,3 +87,10 @@ colnames(df)
 df <- read.csv('Boston_housing_data.csv')
 df <- df %>% mutate(locationzone = ifelse(substr(locationzone,2,2) %in% c(0:9), locationzone, substr(locationzone,2,2) <- paste0(locationdistrict,'5')))
 df %>% select(locationzone)
+
+# Imputing the missing values
+# Question 24 :
+#   There are missing values in the locationdistrict column. Redefine all missing values (either N/A or blank)  in locationdistrict to be the first character in the locationzone column.
+df <- read.csv('Boston_housing_data.csv')
+df <- df %>% mutate(locationdistrict = ifelse(locationdistrict=="") | (is.na(locationdistrict)),substr(locationzone,1,1), locationdistrict)
+df %>% select(locationzone, locationdistrict)
