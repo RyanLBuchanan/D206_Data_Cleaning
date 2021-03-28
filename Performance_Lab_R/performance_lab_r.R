@@ -107,4 +107,4 @@ df %>% select(locationzone, locationdistrict)
 # Question 25 :
 #   Write code to create a separate dataset called df2 that stores information about locationzone, locationdistrict, date_appraised, and medv for the sectors H, J, and N from the dataframe stored as df.
 df <- read.csv('Boston_housing_data.csv')
-df2 <- df %>% filter(locationdistrict %in% c('H', 'J', 'N')) %>% select(locationzone, date_appraised, medv)
+df2 <- df %>% filter(locationdistrict %in% c('H', 'J', 'N')) %>% select(locationzone, locationdistrict, date_appraised, medv)
