@@ -5,6 +5,11 @@ library(magrittr) # needs to be run every time you start R and want to use %>%
 library(dplyr)    # alternatively, this also loads %>%
 #The pipe operator %>% was introduced to "decrease development time and to improve readability and maintainability of code."
 
+# Load factoextra
+library("factoextra")
 
 mtcars[,c(1:7, 10, 11)]
 mtcars.pca <- prcomp(mtcars[,c(1:7, 10, 11)],center = TRUE, scale. = TRUE)
+
+# Create eigenvalue scree plot
+fviz_eig(mtcars.pca, choice = "eigenvalue", addlabels=TRUE)
