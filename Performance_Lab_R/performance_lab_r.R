@@ -115,4 +115,8 @@ df2 <- df %>% filter(locationdistrict %in% c('H', 'J', 'N')) %>% select(location
 df <- read.csv('Boston_housing_data_clean.csv')
 head(df)
 
-
+# Displaying the values
+# Question 27 :
+#   Write code to display the values of the locationdistrict column and the corresponding value of the locationzone column in the dataframe stored as df.
+df <- read.csv('Boston_housing_data_clean.csv')
+df %>% count(locationzone, locationdistrict)
